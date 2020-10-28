@@ -11,14 +11,14 @@ import UIKit
 class GameViewController: UIViewController {
 
     let winGameBoxStackNum: Int = 4
-    let boxVerMaxNum: Int = 18
-    let boxHoriMaxNum: Int = 21
+    let boxVerMaxNum: Int = 13
+    let boxHoriMaxNum: Int = 12
     let boxDefaultColor: [UIColor] = [.systemGray5, .systemBackground]
     
     var turnPlayer = 0
     var playerName: [String] = Array(repeating: "", count: 2)
     var playerColor: [UIColor] = [.green, .orange]
-    var boxArray: [[String]] = [[String]](repeating: [String](repeating: "", count: 21), count: 18)
+    var boxArray: [[String]] = [[String]](repeating: [String](repeating: "", count: 12), count: 13)
     var prevUIButton: UIButton!
     
     @IBOutlet weak var playerNameField: UILabel!
@@ -37,18 +37,13 @@ class GameViewController: UIViewController {
     @IBOutlet var boxButton10: [UIButton]!
     @IBOutlet var boxButton11: [UIButton]!
     @IBOutlet var boxButton12: [UIButton]!
-    @IBOutlet var boxButton13: [UIButton]!
-    @IBOutlet var boxButton14: [UIButton]!
-    @IBOutlet var boxButton15: [UIButton]!
-    @IBOutlet var boxButton16: [UIButton]!
-    @IBOutlet var boxButton17: [UIButton]!
     
     // ゲーム初期化
     @IBAction func restartGame(_ sender: UIBarButtonItem) {
         clearBox(boxButtonArray: boxButton0, index: 0)
         clearBox(boxButtonArray: boxButton1, index: 1)
         clearBox(boxButtonArray: boxButton2, index: 0)
-        clearBox(boxButtonArray: boxButton3, index: 1)
+        clearBox(boxButtonArray: boxButton3, index: 0)
         clearBox(boxButtonArray: boxButton4, index: 0)
         clearBox(boxButtonArray: boxButton5, index: 1)
         clearBox(boxButtonArray: boxButton6, index: 0)
@@ -58,11 +53,6 @@ class GameViewController: UIViewController {
         clearBox(boxButtonArray: boxButton10, index: 0)
         clearBox(boxButtonArray: boxButton11, index: 1)
         clearBox(boxButtonArray: boxButton12, index: 0)
-        clearBox(boxButtonArray: boxButton13, index: 1)
-        clearBox(boxButtonArray: boxButton14, index: 0)
-        clearBox(boxButtonArray: boxButton15, index: 1)
-        clearBox(boxButtonArray: boxButton16, index: 0)
-        clearBox(boxButtonArray: boxButton17, index: 1)
         
         if let prevButton = prevUIButton { prevButton.setTitle("", for: UIControl.State.normal)
         }
@@ -367,41 +357,6 @@ class GameViewController: UIViewController {
         print("selectBox12 tag: \(sender.tag)")
         
         selectBoxButton(button: sender, y: 12, x: sender.tag)
-    }
-    
-    // ハコボタン押下 下から13行目
-    @IBAction func selecteBox13(_ sender: UIButton) {
-        print("selectBox13 tag: \(sender.tag)")
-        
-        selectBoxButton(button: sender, y: 13, x: sender.tag)
-    }
-    
-    // ハコボタン押下 下から14行目
-    @IBAction func selecteBox14(_ sender: UIButton) {
-        print("selectBox14 tag: \(sender.tag)")
-        
-        selectBoxButton(button: sender, y: 14, x: sender.tag)
-    }
-    
-    // ハコボタン押下 下から15行目
-    @IBAction func selecteBox15(_ sender: UIButton) {
-        print("selectBox15 tag: \(sender.tag)")
-        
-        selectBoxButton(button: sender, y: 15, x: sender.tag)
-    }
-    
-    // ハコボタン押下 下から16行目
-    @IBAction func selecteBox16(_ sender: UIButton) {
-        print("selectBox16 tag: \(sender.tag)")
-        
-        selectBoxButton(button: sender, y: 16, x: sender.tag)
-    }
-    
-    // ハコボタン押下 下から17行目
-    @IBAction func selecteBox17(_ sender: UIButton) {
-        print("selectBox17 tag: \(sender.tag)")
-        
-        selectBoxButton(button: sender, y: 17, x: sender.tag)
     }
     
 }
