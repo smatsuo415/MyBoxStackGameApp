@@ -2,7 +2,7 @@
 ## 説明
 ハコヅミゲームアプリ
 ## version
-v1.0.0
+v1.0.1
 ## 仕様
-Large -> x:18 y:21
-small -> x:13 y:12
+Large -> x:18 y:21  
+●small -> x:12 y:13
